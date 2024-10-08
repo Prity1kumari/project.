@@ -1,0 +1,53 @@
+const prompt=require("prompt-sync")();
+
+console.log("This is game of snake,water and gun game");
+console.log("you have to enter s(Snake),w(Water) and g(Gun)");
+let user=prompt("Enter either s,w or g: " );
+let cpuI=Math.floor(Math.random()*3);
+let cpu=["s","w","g"];
+let cpu1=cpu[cpuI];
+const match=(cpu1,user)=>{
+  if(cpu1===user){
+
+    return"Nobady is the winner ,its a tie";
+    
+  }
+else if(cpu1==="s" && user==="w"){
+
+return("The winner is: "+cpu1);
+  
+}
+  else if(cpu1==="s" && user==="g"){
+
+    return("The winner is: "+user);
+  }
+  else if(cpu1==="g"&& user==="w"){
+
+    return("The winner is: "+user);
+  }
+else if(cpu1==="g" && user==="s"){
+
+
+  return("The winner is: "+cpu1);
+}
+  else if(cpu1==="w" && user==="s"){
+
+return("The winner is: "+user);
+    
+  }
+  else if(cpu1==="w" && user==="g"){
+
+return"The winner is: "+cpu1;
+    
+  }
+  
+}
+
+console.log("The computer choose: "+cpu1);
+console.log("The user choose: "+user)
+
+let result=match(cpu1,user);
+console.log(result);
+  
+
+
